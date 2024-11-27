@@ -1,1 +1,2 @@
-Python-nood-to-pro
+Mong muốn khi học AI
+
