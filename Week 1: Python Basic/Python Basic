@@ -1,1 +1,195 @@
-..
+1
+print(" do quoc bao")
+2
+a= 1
+b= 3
+c= a+ b
+print(c)
+
+3
+dai= 1
+rong= 2
+chu vi= 2 * (dai+rong)
+print("chu vi")
+
+4
+dai= 1
+canh= 2
+dien tich= 0.5 * dai * cao
+print(" dien tich")
+5
+print(2 ** 5)
+
+6
+num =int(input("1"))
+if num % 2 == 0:
+        print(f"{num} 2")
+else:
+     print(f"{num} 1")
+
+7
+diem =("8 điểm")
+if diem >= 8.0:
+    print("Xếp loại: Giỏi")
+elif diem >= 6.5:
+    print("Xếp loại: Khá")
+elif diem >= 5.0:
+    print("Xếp loại: Trung Bình")
+else:
+    print("Xếp loại: Yếu")
+
+8
+import math
+
+a =float(input("hệ số a: 1"))
+b =float(input("hệ số b: 2"))
+c =float(input("hệ số c: 3"))
+
+delta = b**2 - 4*a*c
+
+if delta < 0:
+    print("Phương trình vô nghiệm")
+elif delta == 0:
+    x = -b / (2*a)
+    print("Phương trình có nghiệm kép:", x)
+else:
+    x1 = (-b + math.sqrt(delta)) / (2*a)
+    x2 = (-b - math.sqrt(delta)) / (2*a)
+    print("Phương trình có hai nghiệm phân biệt:")
+    print("x1 =", x1)
+    print("x2 =", x2)
+
+9
+độ c =float(input("25 độ c"))
+độ f =(độ c * 9/5) + 32
+print(f"Nhiệt độ tương ứng (°F): {độ f}")
+
+10  
+string = "VanLang"
+result = "V" in string
+print("'V' có trong 'VanLang':", result)
+
+11
+n =float(input("n:5 "))
+for i in range(1, n+1):
+    print(i, end=" ")
+
+12
+n = float(input("n:5 "))
+tong = sum(range(1, n+1))
+print("Tổng các số từ 1 đến", n, "là:", tong)
+
+13
+x =float(input("x: 4"))
+y =float(input("y: 8"))
+z =float(input("z: 10"))
+
+if x % 2 == 0:
+    if y >= 100:
+        print("y lớn hơn hoặc bằng 100")
+    else:
+        print("y bé hơn 100")
+else:
+    if z >= 200:
+        print("z lớn hơn hoặc bằng 200")
+    else:
+        print("z bé hơn 200")
+
+14
+my_list = [1, 2, 3, 4, 5]
+print("Danh sách:", my_list)
+
+my_list.append(6)
+print("khi thêm:", my_list)
+
+my_list.remove(3)
+print("khi xóa:", my_list)
+
+my_list = [3, 7, 2, 9, 5]
+print("Số lớn nhất:", max(my_list))
+print("Số nhỏ nhất:", min(my_list))
+
+15
+def giai_thua(n):
+    gt = 1
+    for i in range(1, n + 1):
+        gt *= i
+    return gt
+
+n =int(input("n:5 "))
+print(f"Giai thừa của {n} là: {giai_thua(n)}")
+
+16
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+    return True
+
+17
+num =int(input("số:7 "))
+print(f"{num} là số nguyên tố: {is_prime(num)}")
+
+18
+import math
+
+def is_perfect_square(num):
+    root = int(math.sqrt(num))
+    return root * root == num
+
+num = int(input("Nhập số: "))
+print(f"{num} là số chính phương:", is_perfect_square(num))
+
+19
+from sympy import symbols, solve
+
+x = symbols('x')
+a, b, c, d = map(float, input("1, 2, 3, 4, 5: ").split())
+equation = a*x**3 + b*x**2 + c*x + d
+roots = solve(equation, x)
+print("Nghiệm của phương trình:", roots)
+
+20
+def pythagoras(a, b):
+    return (a**2 + b**2)**0.5
+
+a = float(input("cạnh a:2"))
+b = float(input("cạnh b:4 "))
+print("Độ dài cạnh huyền:", pythagoras(a, b))
+
+21
+sentence = input("câu:em yêu mẹ em ")
+words = sentence.split()
+print("Số lượng từ trong câu:", len(words))
+
+22
+string = input("chuỗi:vanlang ")
+print("Chuỗi đảo ngược:", string[::-1])
+
+23
+with open("example.txt", "w") as f:
+    f.write("file.")
+
+with open("example.txt", "r") as f:
+    print("nội dung file:", f.read())
+
+24
+try:
+    with open("example.txt", "w") as f:
+        f.write("hello em")
+
+    with open("example.txt", "r") as f:
+        print("nội dung file: hello em", f.read())
+except Exception as e:
+    print("lỗi xảy ra:", e)
+
+25
+try:
+    with open("example.txt", "r") as f:
+        content = f.read()
+        words = content.split()
+        print("số lượng từ trong file:", len(words))
+except FileNotFoundError:
+    print("file không tồn tại")
